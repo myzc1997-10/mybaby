@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Valentine Vibes 💖</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Quicksand:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Cropper.js CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cropperjs@1.5.13/dist/cropper.min.css" />
+  </head>
+  <body>
+    <!-- Subtle floating hearts container (purely decorative) -->
+    <div class="floating-hearts" aria-hidden="true"></div>
+
+    <header class="hero" id="top">
+      <nav class="nav">
+        <div class="logo">Valentine Vibes 💗</div>
+        <div class="nav-actions">
+          <a class="btn ghost ripple" href="#music">
+            🎵 Play music
+          </a>
+          <a class="nav-link" href="#note">Love note</a>
+          <a class="nav-link" href="#moments">Sweet moments</a>
+          <a class="nav-link" href="#story">Cover</a>
+          <a class="nav-link" href="#gallery">Gallery</a>
+          <a class="nav-link" href="#surprise">Surprise</a>
+        </div>
+      </nav>
+
+      <section class="hero-content">
+        <div class="hero-text">
+          <div class="name-section">
+            <input 
+              type="text" 
+              id="nameInput" 
+              class="name-input" 
+              placeholder="赵梓诺"
+              maxlength="30"
+            />
+            <span class="name-label">💕</span>
+          </div>
+          <p class="eyebrow glow-text">A tiny page filled with soft feelings ✨</p>
+          <h1 class="hero-title">
+            <span id="personalizedGreeting">You</span> make the
+            <span class="gradient-text">little moments</span>
+            feel like magic 💞
+          </h1>
+          <p class="hero-subtitle">
+            A simple, cozy corner of the internet made just for love — with warm
+            colors, soft lights, and tiny hearts that float like happy thoughts.
+          </p>
+          <div class="hero-buttons">
+            <button class="btn primary ripple" id="loveLetterBtn">
+              Click for Love 💌
+            </button>
+            <button class="btn secondary ripple" id="scrollToMoments">
+              See little moments 🌸
+            </button>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="hero-heart">💖</div>
+          <p class="hero-card-text">
+            小小的提醒:
+            <span>赵梓诺，你被爱着，你被需要，你足够好</span>
+          </p>
+          <p class="hero-card-sign">– 来自一颗想念你的心 🌙</p>
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <!-- Music section with embedded Spotify player -->
+     <!--  <section class="section music-section reveal" id="music">
+        <div class="section-inner">
+          <h2 class="section-title">Songs for you 🎧</h2>
+          <p class="section-subtitle">
+            Press play below to let the music sit quietly in the background while you read. 💿💖
+          </p>
+          <div class="spotify-embed">
+            <input 
+              type="text" 
+              id="spotifyTrackInput" 
+              class="spotify-track-input" 
+              placeholder="Paste Spotify track ID here (e.g., 5nXmr6ypbTYjhLR3lXSPyc)"
+            />
+            <iframe
+              id="spotifyPlayer"
+              src="https://open.spotify.com/embed/track/5nXmr6ypbTYjhLR3lXSPyc?utm_source=generator"
+              width="100%"
+              height="80"
+              frameborder="0"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+      </section> -->
+
+      <!-- Simple, soft love note section -->
+      <section class="section love-note reveal" id="note">
+        <div class="section-inner">
+          <h2 class="section-title">想对你说的话 诺诺 🌷💌</h2>
+          <p class="love-paragraph">
+            你是让我努力上进的原因. 💫<br />
+            这小小的页面充满了我对你的爱 💖<br />
+            我希望 你能每天都变得开心一些，快乐一些 ✨
+          </p>
+          <div class="love-image-row">
+            <div class="media-block editable-image">
+              <input 
+                type="file" 
+                class="image-upload-input" 
+                accept="image/*" 
+                data-image-id="love-note-1"
+                style="display: none;"
+              />
+              <img
+                src=""
+                alt="Your special memory"
+                loading="lazy"
+                class="editable-img"
+                data-image-id="love-note-1"
+              />
+              <div class="image-placeholder">
+                <span class="placeholder-icon">📷</span>
+                <span class="placeholder-text">Click to add image</span>
+              </div>
+              <button class="replace-image-btn" data-image-id="love-note-1" title="Replace image">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="17 8 12 3 7 8"></polyline>
+                  <line x1="12" y1="3" x2="12" y2="15"></line>
+                </svg>
+              </button>
+              <button class="crop-image-btn" data-image-id="love-note-1" title="Crop image">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="9" y1="3" x2="9" y2="21"></line>
+                  <line x1="15" y1="3" x2="15" y2="21"></line>
+                  <line x1="3" y1="9" x2="21" y2="9"></line>
+                  <line x1="3" y1="15" x2="21" y2="15"></line>
+                </svg>
+              </button>
+              <button class="delete-editable-image-btn" data-image-id="love-note-1" title="Delete image">
+                ×
+              </button>
+            </div>
+            <div class="media-block editable-image">
+              <input 
+                type="file" 
+                class="image-upload-input" 
+                accept="image/*" 
+                data-image-id="love-note-2"
+                style="display: none;"
+              />
+              <img
+                src=""
+                alt="Your special memory"
+                loading="lazy"
+                class="editable-img"
+                data-image-id="love-note-2"
+              />
+              <div class="image-placeholder">
+                <span class="placeholder-icon">📷</span>
+                <span class="placeholder-text">Click to add image</span>
+              </div>
+              <button class="replace-image-btn" data-image-id="love-note-2" title="Replace image">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="17 8 12 3 7 8"></polyline>
+                  <line x1="12" y1="3" x2="12" y2="15"></line>
+                </svg>
+              </button>
+              <button class="crop-image-btn" data-image-id="love-note-2" title="Crop image">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="9" y1="3" x2="9" y2="21"></line>
+                  <line x1="15" y1="3" x2="15" y2="21"></line>
+                  <line x1="3" y1="9" x2="21" y2="9"></line>
+                  <line x1="3" y1="15" x2="21" y2="15"></line>
+                </svg>
+              </button>
+              <button class="delete-editable-image-btn" data-image-id="love-note-2" title="Delete image">
+                ×
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Card grid with soft glowing hover effects -->
+      <section class="section cards-section reveal" id="moments">
+        <div class="section-inner">
+          <h2 class="section-title">Sweet little things we love 💗</h2>
+          <p class="section-subtitle">
+            These are tiny pieces of love — soft light, warm hugs, late night
+            talks, and quiet smiles.
+          </p>
+
+          <div class="card-grid">
+            <article class="card">
+              <div class="card-icon">🌙</div>
+              <h3 class="card-title">Late night talks</h3>
+              <p class="card-text">
+                The world is quiet, the lights are low, and it feels like only
+                our hearts are awake and talking.
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="card-icon">☕</div>
+              <h3 class="card-title">Slow mornings</h3>
+              <p class="card-text">
+                Soft music, warm drinks, messy hair and sleepy eyes — but the
+                smile is always bright.
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="card-icon">🌸</div>
+              <h3 class="card-title">Little details</h3>
+              <p class="card-text">
+                The way you laugh, the way you care, the way you remember small
+                things — all of it feels like magic.
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="card-icon">🎀</div>
+              <h3 class="card-title">Tiny surprises</h3>
+              <p class="card-text">
+                A message at the right time, a soft word, a tiny gift — love
+                hides in sweet little moments.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Aesthetic side cover section -->
+      <section class="section cover-section reveal" id="story">
+        <div class="section-inner cover-layout">
+          <div class="cover-image-frame media-block editable-image">
+            <input 
+              type="file" 
+              class="image-upload-input" 
+              accept="image/*" 
+              data-image-id="cover-image"
+              style="display: none;"
+            />
+            <img
+              class="cover-image editable-img"
+              src=""
+              alt="Your cover photo"
+              loading="lazy"
+              data-image-id="cover-image"
+            />
+            <div class="image-placeholder">
+              <span class="placeholder-icon">📸</span>
+              <span class="placeholder-text">Click to add cover photo</span>
+            </div>
+            <button class="replace-image-btn" data-image-id="cover-image" title="Replace image">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="17 8 12 3 7 8"></polyline>
+                <line x1="12" y1="3" x2="12" y2="15"></line>
+              </svg>
+            </button>
+            <button class="crop-image-btn" data-image-id="cover-image" title="Crop image">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="9" y1="3" x2="9" y2="21"></line>
+                <line x1="15" y1="3" x2="15" y2="21"></line>
+                <line x1="3" y1="9" x2="21" y2="9"></line>
+                <line x1="3" y1="15" x2="21" y2="15"></line>
+              </svg>
+            </button>
+            <button class="delete-editable-image-btn" data-image-id="cover-image" title="Delete image">
+              ×
+            </button>
+          </div>
+          <div class="cover-copy">
+            <h2 class="section-title">Your own soft little cover page ✨</h2>
+            <p class="section-subtitle">
+              This tall picture on the side is your aesthetic cover. You can swap
+              it for any photo that feels like your story — a sunset, a selfie,
+              a place you both love, or a cozy tiny detail. 🌅📸
+            </p>
+            <ul class="cover-list">
+              <li>🌸 Pick a calm, pretty photo that makes your heart feel soft.</li>
+              <li>💌 Change the image link in the code to your own picture.</li>
+              <li>🌙 Add more little lines here that sound like you and your person.</li>
+            </ul>
+            <p class="cover-note">
+              You can keep this page simple, or turn it into a whole love letter
+              website — one little edit at a time. 💻💖
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Reasons section -->
+      <section class="section reasons-section reveal" id="reasons">
+        <div class="section-inner">
+          <h2 class="section-title">Little reasons you are so special 💞</h2>
+          <p class="section-subtitle">
+            This is a tiny list, but the real list is endless. You can change
+            every sentence here to match your own heart.
+          </p>
+          <div class="reasons-grid">
+            <article class="reason-card">
+              <div class="reason-emoji">💬</div>
+              <h3 class="reason-title">You listen so softly</h3>
+              <p class="reason-text">
+                When I talk, you really hear me. Not just the words, but the
+                feelings hiding under them.
+              </p>
+            </article>
+            <article class="reason-card">
+              <div class="reason-emoji">🤣</div>
+              <h3 class="reason-title">Your silly side</h3>
+              <p class="reason-text">
+                You send memes at the perfect time and make even boring days
+                feel funny and light.
+              </p>
+            </article>
+            <article class="reason-card">
+              <div class="reason-emoji">🤍</div>
+              <h3 class="reason-title">Your soft heart</h3>
+              <p class="reason-text">
+                You care about small things, lost things, and tired hearts —
+                and that makes you magic.
+              </p>
+            </article>
+            <article class="reason-card">
+              <div class="reason-emoji">🌧️➡️🌈</div>
+              <h3 class="reason-title">You are my calm</h3>
+              <p class="reason-text">
+                On heavy days you feel like a quiet room, a warm drink, and a
+                deep breath I didn’t know I needed.
+              </p>
+            </article>
+            <article class="reason-card">
+              <div class="reason-emoji">📸</div>
+              <h3 class="reason-title">Tiny memories</h3>
+              <p class="reason-text">
+                Little walks, shared songs, sleepy calls — I keep them all like
+                photos in a secret folder.
+              </p>
+            </article>
+            <article class="reason-card">
+              <div class="reason-emoji">💫</div>
+              <h3 class="reason-title">Just… you</h3>
+              <p class="reason-text">
+                Even when nothing is happening, being near you feels like
+                something special is happening anyway.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- User-editable gallery section -->
+      <section class="section gallery-section reveal" id="gallery">
+        <div class="section-inner">
+          <h2 class="section-title">Your own little gallery 📸</h2>
+          <p class="section-subtitle">
+            Add your special moments here! Upload photos from your phone or laptop.
+            Your images will be saved and accessible anytime. 💗
+          </p>
+          
+          <!-- File Upload Area -->
+          <div class="upload-area">
+            <input 
+              type="file" 
+              id="imageUpload" 
+              accept="image/*" 
+              multiple 
+              style="display: none;"
+            />
+            <label for="imageUpload" class="upload-btn">
+              <span class="upload-icon">📷</span>
+              <span class="upload-text">Add Photos</span>
+              <span class="upload-hint">Click or tap to upload</span>
+            </label>
+          </div>
+
+          <!-- Gallery Grid -->
+          <div class="gallery-grid" id="galleryGrid">
+            <!-- Images will be dynamically added here -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Surprise & interaction section -->
+      <section class="section surprise-section reveal" id="surprise">
+        <div class="section-inner">
+          <h2 class="section-title">A soft little surprise for you 💘</h2>
+          <p class="section-subtitle">
+            Press the button and let the hearts dance for you. It’s safe, sweet,
+            and full of love.
+          </p>
+          <button class="btn primary large ripple" id="surpriseBtn">
+            Surprise 💝
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <p class="footer-credit">Made by <span class="footer-name">ZhangChen</span> 💗</p>
+      </div>
+      <a class="back-to-top" href="#top">Back to top ⬆️</a>
+    </footer>
+
+    <!-- Crop Modal -->
+    <div class="modal hidden" id="cropModal" aria-hidden="true" role="dialog">
+      <div class="modal-backdrop" id="cropModalBackdrop"></div>
+      <div class="modal-content crop-modal-content">
+        <button class="modal-close" id="cropModalClose" aria-label="Close crop modal">
+          ✕
+        </button>
+        <h2 class="modal-title">Crop Image ✂️</h2>
+        <div class="crop-container">
+          <img id="cropImage" src="" alt="Image to crop" />
+        </div>
+        <div class="crop-actions">
+          <button class="btn secondary ripple" id="cropCancelBtn">Cancel</button>
+          <button class="btn primary ripple" id="cropApplyBtn">Apply Crop</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Love letter modal -->
+    <div class="modal hidden" id="loveModal" aria-hidden="true" role="dialog">
+      <div class="modal-backdrop" id="modalBackdrop"></div>
+      <div class="modal-content">
+        <button class="modal-close" id="modalClose" aria-label="Close love letter">
+          ✕
+        </button>
+        <h2 class="modal-title">A tiny love letter for you 💌</h2>
+        <p class="modal-text">
+          If your heart ever feels heavy, remember this:
+          you are kind, you are bright, and you deserve soft, gentle love —
+          the kind that makes you feel safe, seen, and held.
+        </p>
+        <p class="modal-text">
+          Somewhere in this big, busy world, someone is very happy that you
+          exist. Thank you for being you. 🌹
+        </p>
+        <p class="modal-text modal-question">
+          So, will you keep this tiny corner of love in your heart today? 💘
+        </p>
+        <div class="modal-choices">
+          <button
+            class="btn primary ripple choice-btn yes"
+            id="yesBtn"
+            type="button"
+          >
+            Yess, of course 💕
+          </button>
+          <button
+            class="btn secondary ripple choice-btn no"
+            id="noBtn"
+            type="button"
+          >
+            No (don’t click me) 🙈
+          </button>
+        </div>
+        <p class="modal-note">
+          P.S. The “No” button is shy, so it might run away from you 😳💨
+        </p>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Cropper.js JS -->
+    <script src="https://cdn.jsdelivr.net/npm/cropperjs@1.5.13/dist/cropper.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
+
